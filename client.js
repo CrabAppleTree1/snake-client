@@ -11,7 +11,10 @@ const connect = function () {
   conn.setEncoding("utf8");
   conn.on("connect", () => {
     conn.write("Successfully connected to game server");
-    conn.write("Named: HMD")
+    setTimeout(function(){ conn.write("Move: up"); }, 50);
+    setInterval(function(){ conn.write("Move: right"); }, 50);
+    
+   
   });
 
   return conn;
